@@ -30,7 +30,7 @@
                             echo "Register Successful";
                         }
 
-                }
+                } //registraion part is done here
 
             if ($_POST['action'] == 'login') 
                 {
@@ -47,6 +47,15 @@
                                     $_SESSION['user_id'] = $row['id'];
                                     $_SESSION['user_name'] = $row['name'];
                                     $_SESSION['user_role'] = $row['role'];
+
+                                    if($_SESSION['user_role'] == "admin")
+                                        {
+                                            header("Location: /admin_panel.php");
+                                        }
+                                    else
+                                        {
+                                            echo "dashbroad for users";
+                                        }
                                 }
                                 else
                                     {
