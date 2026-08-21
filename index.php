@@ -13,13 +13,9 @@
 </head>
 <body>
     <header>
-
     </header>
-
     <div id="hero-section">
-
     </div>
-
     <div id="shop-section">
         <div id="box1" class="box">
             <div class="box-content">
@@ -108,12 +104,10 @@
             </div>
         </div>
     </div>
-    
     <footer>
             <?php
              include __DIR__ . '/view/footer.php'; 
              ?>
     </footer>
-
 </body>
 </html>

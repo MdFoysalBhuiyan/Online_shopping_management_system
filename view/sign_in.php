@@ -28,6 +28,14 @@
                                         {
                                             echo "dashbroad for users";
                                         }
+                                    if($_SESSION['user_role'] == "manager")
+                                        {
+                                            header("Location: ../manager.php");
+                                        }
+                                    else
+                                        {
+                                            echo "dashbroad for users";
+                                        }
                                 }
                                 else
                                     {
