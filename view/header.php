@@ -43,80 +43,51 @@
             <input
                 id="serach-input"
                 type="search"
-                placeholder="Search Amazon"
+                placeholder="Search Here"
             >
-
             <div id="serach-icon">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-
         </div>
-
         <div id="nav-signin">
-
             <p>
                 <span>Hello!</span>
             </p>
-
             <a
-                href="login-page.php"
-                id="sign_in_button"
-                class="nav-second"
+                href="view/sign_in.php" id="sign_in_button" class="nav-second"
             >
                 Sign in
             </a>
-
         </div>
-
         <div id="nav-return" class="border">
-
             <p>
                 <span>Returns</span>
             </p>
-
             <p class="nav-second">
                 & Orders
             </p>
-
         </div>
-
         <div id="nav-cart" class="border">
-
             <div id="cart-icon">
                 <i class="fa-solid fa-cart-plus"></i>
             </div>
-
             <p id="cart-text">
                 Cart
             </p>
-
         </div>
-
     </div>
-
-
     <div id="panel">
-
         <div id="menu-icon" class="border">
-
             <i class="fa-solid fa-bars"></i>
-
             <p id="all-text">
                 All
             </p>
-
         </div>
-
-
         <div id="panel-op" class="border">
-
             <p>Today's Deals</p>
             <p>Gift Cards</p>
             <p>Offer</p>
             <p>New item</p>
-
         </div>
-
     </div>
-
 </header>

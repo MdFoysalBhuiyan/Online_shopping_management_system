@@ -52,7 +52,6 @@
         <div>
           <h1>Inventory</h1>
           <p class="sub" id="subLine">
-            148 products across 9 categories
           </p>
         </div>
 
@@ -106,8 +105,6 @@
   </div>
 </div>
 
-
-<!-- Add / Edit Product Modal -->
 
 <div class="overlay" id="overlay">
 
