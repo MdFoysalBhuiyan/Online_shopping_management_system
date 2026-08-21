@@ -1,3 +1,23 @@
+<?php
+// session_start();
+// if(isset($_SESSION['user_id']))
+//     {
+//         if($_SESSION['user_role'] == "manager")
+//             {
+                
+//             }
+//         else
+//             {
+//                 echo "GO to home page";   
+//             }
+//     }
+// else
+//     {
+//         header("Location: /index.php");
+//     }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,44 +25,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Shop BD Inventory</title>
 
-<link rel="stylesheet" href="manager_style.css">
+<link rel="stylesheet" href="manager-style.css">
 </head>
-
 <body>
-
 <div class="shell">
   <header class="topbar">
     <div class="brand">
-      <button class="brand-mark" id="brandMark" title="Shop menu" aria-label="Shop menu">S</button>
+      <button class="brand-mark" id="brandMark" title="Shop menu" aria-label="Shop menu" onclick="window.location.href='index.php'">S</button>
       <span class="brand-name">Online Shop BD</span>
     </div>
-
     <div class="manager-pill">
       <span class="dot"></span> MANAGER
     </div>
   </header>
 
   <div class="layout">
-
     <nav class="sidebar" id="sidebar">
-      <button class="nav-item active" data-page="Inventory">
-        <span class="bullet"></span>Inventory
+      <button class="nav-item" onclick="window.location.href='index.php'">
+      <span class="bullet"></span>Inventory
       </button>
 
-      <button class="nav-item" data-page="Orders">
-        <span class="bullet"></span>Orders
+      <button class="nav-item" onclick="window.location.href='index.php'">
+      <span class="bullet"></span>Orders
       </button>
 
-      <button class="nav-item" data-page="Categories">
-        <span class="bullet"></span>Categories
+      <button class="nav-item" onclick="window.location.href='index.php'">
+      <span class="bullet"></span>Categories
       </button>
 
-      <button class="nav-item" data-page="Payments">
-        <span class="bullet"></span>Payments
+      <button class="nav-item" onclick="window.location.href='index.php'">
+      <span class="bullet"></span>Payments
       </button>
 
-      <button class="nav-item" data-page="Log out">
-        <span class="bullet"></span>Log out
+      <button class="nav-item" onclick="window.location.href='logout.php'">
+      <span class="bullet"></span>Log out
       </button>
     </nav>
 
@@ -97,7 +113,6 @@
         </thead>
 
         <tbody id="tableBody">
-          <!-- Rows will be added by JavaScript -->
         </tbody>
       </table>
 
@@ -107,69 +122,12 @@
 
 
 <div class="overlay" id="overlay">
-
   <div class="modal">
-
     <h2 id="modalTitle">Add product</h2>
-
-    <div class="field">
-      <label for="fName">Product name</label>
-      <input
-        type="text"
-        id="fName"
-        placeholder="e.g. Bamboo cutting board"
-      >
     </div>
-
-    <div class="field">
-      <label for="fCategory">Category</label>
-      <input
-        type="text"
-        id="fCategory"
-        placeholder="e.g. Kitchen"
-      >
-    </div>
-
-    <div class="field">
-      <label for="fStock">Stock</label>
-      <input
-        type="number"
-        id="fStock"
-        min="0"
-        placeholder="0"
-      >
-    </div>
-
-    <div class="field">
-      <label for="fPrice">Price (৳)</label>
-      <input
-        type="number"
-        id="fPrice"
-        min="0"
-        placeholder="0"
-      >
-    </div>
-
-    <div class="modal-actions">
-
-      <button class="btn-secondary" id="cancelBtn">
-        Cancel
-      </button>
-
-      <button class="btn-primary" id="saveBtn">
-        Save product
-      </button>
-
-    </div>
-
   </div>
-
 </div>
-
-
 <div class="toast" id="toast"></div>
-
-
 <script src="manager_script.js"></script>
 
 </body>
