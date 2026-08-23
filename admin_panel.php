@@ -1,20 +1,20 @@
 <?php
-// session_start();
-// if(isset($_SESSION['user_id']))
-//     {
-//         if($_SESSION['user_role'] == "admin")
-//             {
+session_start();
+if(isset($_SESSION['user_id']))
+    {
+        if($_SESSION['user_role'] == "admin")
+            {
                 
-//             }
-//         else
-//             {
-                
-//             }
-//     }
-// else
-//     {
-//         header("Location: /index.php");
-//     }
+            }
+        else
+            {
+                echo "GO to home page";   
+            }
+    }
+else
+    {
+        header("Location: /index.php");
+    }
 ?>
 
 <!DOCTYPE html>

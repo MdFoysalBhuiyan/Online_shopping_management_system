@@ -1,22 +1,21 @@
 <?php
-// session_start();
-// if(isset($_SESSION['user_id']))
-//     {
-//         if($_SESSION['user_role'] == "manager")
-//             {
+session_start();
+if(isset($_SESSION['user_id']))
+    {
+        if($_SESSION['user_role'] == "manager")
+            {
                 
-//             }
-//         else
-//             {
-//                 echo "GO to home page";   
-//             }
-//     }
-// else
-//     {
-//         header("Location: /index.php");
-//     }
+            }
+        else
+            {
+                echo "GO to home page";   
+            }
+    }
+else
+    {
+        header("Location: /index.php");
+    }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,9 +70,7 @@
           </p>
         </div>
 
-        <button class="add-btn" id="addProductBtn">
-          + Add product
-        </button>
+        <button class="add-btn" id="addProductBtn" onclick="window.location.href='add-product.php'"> + Add product</button>
       </div>
 
       <div class="stats">
@@ -120,14 +117,6 @@
   </div>
 </div>
 
-
-<div class="overlay" id="overlay">
-  <div class="modal">
-    <h2 id="modalTitle">Add product</h2>
-    </div>
-  </div>
-</div>
-<div class="toast" id="toast"></div>
 <script src="manager_script.js"></script>
 
 </body>
