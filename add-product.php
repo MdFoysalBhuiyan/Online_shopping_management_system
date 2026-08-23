@@ -75,7 +75,7 @@ if(isset($_SESSION['user_id'])) {
           <h1>Inventory</h1>
           <p class="sub" id="subLine"></p>
         </div>
-        <button class="add-btn" id="addProductBtn"> + Add product </button>
+        <button class="add-btn" id="addProductBtn">Product </button>
       </div>
 
       <div class="stats"></div>
