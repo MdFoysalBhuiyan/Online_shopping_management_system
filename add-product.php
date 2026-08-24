@@ -62,9 +62,10 @@ if(isset($_SESSION['user_id'])) {
 
   <div class="layout">
     <nav class="sidebar" id="sidebar">
-      <button class="nav-item" onclick="window.location.href='index.php'"><span class="bullet"></span>Inventory</button>
+      <button class="nav-item" onclick="window.location.href='manager.php'"><span class="bullet"></span>Manager Panel</button>
       <button class="nav-item" onclick="window.location.href='index.php'"><span class="bullet"></span>Orders</button>
-      <button class="nav-item" onclick="window.location.href='index.php'"><span class="bullet"></span>Categories</button>
+      <button class="nav-item" onclick="window.location.href='add-product.php'"> <span class="bullet"></span>Add product </button>
+      <button class="nav-item" onclick="window.location.href='display-product.php'"><span class="bullet"></span>View Product</button>
       <button class="nav-item" onclick="window.location.href='index.php'"><span class="bullet"></span>Payments</button>
       <button class="nav-item" onclick="window.location.href='logout.php'"><span class="bullet"></span>Log out</button>
     </nav>
@@ -75,7 +76,7 @@ if(isset($_SESSION['user_id'])) {
           <h1>Inventory</h1>
           <p class="sub" id="subLine"></p>
         </div>
-        <button class="add-btn" id="addProductBtn">Product </button>
+        <button> </button>
       </div>
 
       <div class="stats"></div>

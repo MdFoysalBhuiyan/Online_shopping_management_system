@@ -37,66 +37,41 @@ else
       <span class="dot"></span> MANAGER
     </div>
   </header>
-
   <div class="layout">
     <nav class="sidebar" id="sidebar">
-      <button class="nav-item" onclick="window.location.href='index.php'">
-      <span class="bullet"></span>Inventory
-      </button>
-
-      <button class="nav-item" onclick="window.location.href='index.php'">
-      <span class="bullet"></span>Orders
-      </button>
-
-      <button class="nav-item" onclick="window.location.href='index.php'">
-      <span class="bullet"></span>Categories
-      </button>
-
-      <button class="nav-item" onclick="window.location.href='index.php'">
-      <span class="bullet"></span>Payments
-      </button>
-
-      <button class="nav-item" onclick="window.location.href='logout.php'">
-      <span class="bullet"></span>Log out
-      </button>
+      <button class="nav-item" onclick="window.location.href='manager.php'"> <span class="bullet"></span>Manager Panel </button>
+      <button class="nav-item" onclick="window.location.href='index.php'"> <span class="bullet"></span>Orders </button>
+      <button class="nav-item" onclick="window.location.href='add-product.php'"> <span class="bullet"></span>Add product </button>
+      <button class="nav-item" onclick="window.location.href='display-product.php'"> <span class="bullet"></span>View Product</button>
+      <button class="nav-item" onclick="window.location.href='index.php'"> <span class="bullet"></span>Payments</button>
+      <button class="nav-item" onclick="window.location.href='logout.php'"><span class="bullet"></span>Log out</button>
     </nav>
-
     <main class="content">
-
       <div class="content-header">
         <div>
           <h1>Inventory</h1>
           <p class="sub" id="subLine">
           </p>
         </div>
-
-        <button class="add-btn" id="addProductBtn" onclick="window.location.href='add-product.php'"> + Add product</button>
       </div>
-
       <div class="stats">
-
         <div class="stat-card">
           <div class="stat-label">In stock</div>
           <div class="stat-value" id="statInStock">128</div>
         </div>
-
         <div class="stat-card">
           <div class="stat-label">Low stock</div>
           <div class="stat-value" id="statLowStock">14</div>
         </div>
-
         <div class="stat-card">
           <div class="stat-label">Out of stock</div>
           <div class="stat-value" id="statOutStock">6</div>
         </div>
-
         <div class="stat-card">
           <div class="stat-label">Orders today</div>
           <div class="stat-value">37</div>
         </div>
-
       </div>
-
       <table>
         <thead>
           <tr>
@@ -108,16 +83,12 @@ else
             <th></th>
           </tr>
         </thead>
-
         <tbody id="tableBody">
         </tbody>
       </table>
-
     </main>
   </div>
 </div>
-
-<script src="manager_script.js"></script>
 
 </body>
 </html>
