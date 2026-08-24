@@ -227,3 +227,20 @@ tr:hover td {
     padding: 10px 15px;
     color: white;
 }
+
+#update {
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+#delete {
+    background-color: #fbe2df;
+    color: #b5433a;
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+}

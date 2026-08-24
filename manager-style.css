@@ -126,21 +126,6 @@ body {
     color: #7f8c8d;
     margin-top: 5px;
 }
-
-.add-btn {
-    background-color: #2ecc71;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.add-btn:hover {
-    background-color: #27ae60;
-}
 .stats {
     display: grid;
     gap: 20px;
