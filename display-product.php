@@ -12,6 +12,34 @@ if ($_SESSION['user_role'] != "manager") {
     exit();
 }
 
+$message = "";
+
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+
+    $sql_delete = "DELETE FROM products WHERE id = '$id'";
+    $delete_result = mysqli_query($conn, $sql_delete);
+
+    if ($delete_result) {
+        $message = "Product Deleted";
+    } else {
+        $message = "Error deleting product";
+    }
+}
+
+if (isset($_GET['update'])) {
+    $id = $_GET['update'];
+
+    $sql_update = "UPDATE products SET stock = stock + 1 WHERE id = '$id'";
+    $update_result = mysqli_query($conn, $sql_update);
+
+    if ($update_result) {
+        $message = "Stock Updated";
+    } else {
+        $message = "Error updating stock";
+    }
+}
+
 $sql = "SELECT * FROM products";
 $result = mysqli_query($conn, $sql);
 
@@ -57,6 +85,9 @@ if (!$result) {
           <h1>View Product</h1>
           <p class="sub" id="subLine"></p>
         </div>
+            <?php if (!empty($message)) { ?>
+                <p style="color: red;"><?php echo $message; ?></p>
+            <?php } ?>
         <button> </button>
       </div>
 
@@ -84,8 +115,8 @@ if (!$result) {
                     <td><?php echo $row['stock']?></td>
                     <td> <img src="./media/<?php echo $row['image']; ?>" alt="" width="250"> </td>
                     <td><?php echo $row['cate_name']?></td>
-                    <td><a href="#" id="update"> Update </a>
-                    <a href="#" id="delete"> Delete </a> </td>
+                    <td><a href="display-product.php?update=<?php echo $row['id']; ?>" id="update">Update</a>
+                    <a href="display-product.php?delete=<?php echo $row['id']; ?>" id="delete">Delete</a> </td>
                 </tr>
                 <?php } ?>
             </tbody>
