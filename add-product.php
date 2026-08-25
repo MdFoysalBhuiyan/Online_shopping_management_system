@@ -23,7 +23,7 @@ if(isset($_SESSION['user_id'])) {
             if(!$result) {
                 echo "Error : {$conn->error}</p>";
             } else {
-                echo "Product Added Successfully</p>";
+                $message = "Product Added Successfully";
                 if(!empty($image)){
                     move_uploaded_file($temp_location, $upload_location . $image);
                 }
@@ -112,6 +112,10 @@ if(isset($_SESSION['user_id'])) {
         </table>
         <br>
         <input type="submit" name="submit" id="add" value="ADD">
+        <br>
+        <?php if(!empty($message)) { ?>
+            <p style="color: green;"><?php echo $message; ?></p>
+        <?php } ?>
       </form>
     </main>
   </div>
