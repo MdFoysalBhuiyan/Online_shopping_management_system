@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "controller/db.php";
 include __DIR__ . '/view/header.php';
 
@@ -25,13 +26,24 @@ $result = mysqli_query($conn, $sql);
                 <h2><?php echo $row['name']; ?></h2>
                 <p><?php echo $row['about']; ?></p>
                 <h3>Price: <?php echo $row['price']; ?></h3>
-                <p>Stock: <?php echo $row['stock']; ?></p></div>
+                <p>Stock: <?php echo $row['stock']; ?></p>
+                <br>
+                <button class="buy_btn" onclick="<?php
+                if (isset($_SESSION['user_id'])) {
+                    echo "window.location.href='single_order.php?id=" . $row['id'] . "'";
+                } else {
+                    echo "window.location.href='./view/sign_in.php'";
+                }
+                ?>">
+                    Buy
+                </button>
+            </div>
         <?php } ?>
     </div>
 </body>
     <footer>
-            <?php
-             include __DIR__ . '/view/footer.php'; 
-             ?>
+        <?php
+        include __DIR__ . '/view/footer.php'; 
+        ?>
     </footer>
 </html>
