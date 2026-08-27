@@ -1,3 +1,9 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,11 +59,19 @@
             <p>
                 <span>Hello!</span>
             </p>
-            <a
-                href="view/sign_in.php" id="sign_in_button" class="nav-second"
-            >
-                Sign in
-            </a>
+
+            <?php
+            if (isset($_SESSION['user_id'])) {
+            ?>
+                <a href="logout.php" id="sign_in_button" class="nav-second">Logout</a>
+            <?php
+            } 
+            else {
+            ?>
+                <a href="view/sign_in.php" id="sign_in_button" class="nav-second">Sign in</a>
+            <?php
+            }
+            ?>
         </div>
         <div id="nav-return" class="border">
             <p>

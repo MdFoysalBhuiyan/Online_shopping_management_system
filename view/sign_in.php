@@ -36,6 +36,14 @@
                                         {
                                             echo "dashbroad for users";
                                         }
+                                    if($_SESSION['user_role'] == "customer")
+                                        {
+                                            header("Location: ../index.php");
+                                        }
+                                    else
+                                        {
+                                            echo "dashbroad for users";
+                                        }
                                 }
                                 else
                                     {
