@@ -72,10 +72,10 @@ if (!$result) {
   <div class="layout">
     <nav class="sidebar" id="sidebar">
       <button class="nav-item" onclick="window.location.href='manager.php'"><span class="bullet"></span>Manager Panel</button>
-      <button class="nav-item" onclick="window.location.href='index.php'"><span class="bullet"></span>Orders</button>
+      <button class="nav-item" onclick="window.location.href='order_history.php'"><span class="bullet"></span>Orders</button>
       <button class="nav-item" onclick="window.location.href='add-product.php'"> <span class="bullet"></span>Add product </button>
       <button class="nav-item" onclick="window.location.href='display-product.php'"> <span class="bullet"></span>View Product</button>
-      <button class="nav-item" onclick="window.location.href='index.php'"><span class="bullet"></span>Payments</button>
+      <button class="nav-item" onclick="window.location.href='payment_history.php'"><span class="bullet"></span>Payments</button>
       <button class="nav-item" onclick="window.location.href='logout.php'"><span class="bullet"></span>Log out</button>
     </nav>
 

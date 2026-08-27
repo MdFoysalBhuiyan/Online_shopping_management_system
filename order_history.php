@@ -1,25 +1,8 @@
 <?php
-session_start();
-if(isset($_SESSION['user_id']))
-    {
-        if($_SESSION['user_role'] == "manager")
-            {
-                
-            }
-        else
-            {
-                echo "GO to home page";   
-            }
-    }
-else
-    {
-        header("Location: /index.php");
-    }
-    include "controller/db.php";
-    $sql = "SELECT id, name, email, phone, address, role FROM users WHERE role = 'customer'";
-    $result = mysqli_query($conn, $sql);
+include "controller/db.php";
+$sql = "SELECT * FROM single_order";
+$result = mysqli_query($conn, $sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,21 +44,17 @@ else
       </div>
             <table border="1">
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th>Role</th>
+                <th>Order ID</th>
+                <th>User ID</th>
+                <th>Product ID</th>
+                <th>Total Amount</th>
             </tr>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-              <td><?php echo $row['id']; ?></td>
-              <td><?php echo $row['name']; ?></td>
-              <td><?php echo $row['email']; ?></td>
-              <td><?php echo $row['phone']; ?></td>
-              <td><?php echo $row['address']; ?></td>
-              <td><?php echo $row['role']; ?></td>
+                <td><?php echo $row['id']; ?></td>
+                <td><?php echo $row['user_id']; ?></td>
+                <td><?php echo $row['product_id']; ?></td>
+                <td><?php echo $row['total_amount']; ?></td>
             </tr>
             <?php } ?>
         </table>
