@@ -1,7 +1,9 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: view/sign_in.php");
     exit;
 }
 include "controller/db.php";
@@ -10,6 +12,7 @@ $sql = "SELECT * FROM products WHERE id = $id";
 $result = mysqli_query($conn, $sql);
 $product = mysqli_fetch_assoc($result);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +28,16 @@ $product = mysqli_fetch_assoc($result);
     <p><?php echo $product['about']; ?></p>
     <h3>Price: <?php echo $product['price']; ?></h3>
     <p>Stock: <?php echo $product['stock']; ?></p>
-    <form>
+    <form action="payment.php" method="POST">
+        <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
         <label>Quantity:</label>
-        <input type="number" value="1" min="1">
+        <input type="number" name="quantity" value="1" min="1">
+        <br><br>
+        <label>Payment Method:</label>
+        <select name="payment_method">
+            <option value="card">Card</option>
+            <option value="cod">Cash on Delivery</option>
+        </select>
         <br><br>
         <button type="submit">Payment</button>
     </form>
