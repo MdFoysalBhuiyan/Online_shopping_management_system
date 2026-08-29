@@ -1,23 +1,12 @@
 <?php
-session_start();
-if(isset($_SESSION['user_id']))
-    {
-        if($_SESSION['user_role'] == "manager")
-            {
-                
-            }
-        else
-            {
-                echo "GO to home page";   
-            }
-    }
-else
-    {
-        header("Location: /index.php");
-    }
-    include "controller/db.php";
-    $sql = "SELECT id, name, email, phone, address, role FROM users WHERE role = 'customer'";
-    $result = mysqli_query($conn, $sql);
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+include "controller/db.php";
+$id = $_SESSION['user_id'];
+$sql = "SELECT id, name, email, phone, address, role FROM users WHERE id = $id";
+$result = mysqli_query($conn, $sql);
+$user = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -53,33 +42,17 @@ else
     <main class="content">
       <div class="content-header">
         <div>
-          <h1>Order Histroy</h1>
+          <h1>Profile</h1>
           <p class="sub" id="subLine">
           </p>
+            <p id="user-id">ID: <?php echo $user['id']; ?></p>
+            <p id="user-name">Name: <?php echo $user['name']; ?></p>
+            <p id="user-email">Email: <?php echo $user['email']; ?></p>
+            <p id="user-phone">Phone: <?php echo $user['phone']; ?></p>
+            <p id="user-address">Address: <?php echo $user['address']; ?></p>
+            <p id="user-role">Role: <?php echo $user['role']; ?></p>
         </div>
       </div>
-      <div class="stats">
-      </div>
-            <table border="1">
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th>Role</th>
-            </tr>
-            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-            <tr>
-              <td><?php echo $row['id']; ?></td>
-              <td><?php echo $row['name']; ?></td>
-              <td><?php echo $row['email']; ?></td>
-              <td><?php echo $row['phone']; ?></td>
-              <td><?php echo $row['address']; ?></td>
-              <td><?php echo $row['role']; ?></td>
-            </tr>
-            <?php } ?>
-        </table>
     </main>
   </div>
 </div>

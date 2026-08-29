@@ -22,7 +22,7 @@
 
                                     if($_SESSION['user_role'] == "admin")
                                         {
-                                            header("Location: /admin_panel.php");
+                                            header("Location: ../admin_panel.php");
                                         }
                                     else
                                         {
