@@ -245,11 +245,11 @@ ul a {
 
 .product h3 {
     margin-top: 10px;
-    color: #b12704;
+    color: rgb(143, 203, 22);
 }
 
 .buy_btn {
-    background-color: blue;
+    background-color: #222F3D;
     color: white;
     padding: 10px 20px;
     border: none;
