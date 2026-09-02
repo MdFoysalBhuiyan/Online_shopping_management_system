@@ -1,8 +1,4 @@
-<?php
-include "controller/db.php";
-$sql = "SELECT * FROM payment";
-$result = mysqli_query($conn, $sql);
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +6,7 @@ $result = mysqli_query($conn, $sql);
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Shop BD Inventory</title>
 
-<link rel="stylesheet" href="manager-style.css">
+<link rel="stylesheet" href="../view/manager/manager-style.css">
 </head>
 <body>
 <div class="shell">
@@ -24,14 +20,15 @@ $result = mysqli_query($conn, $sql);
     </div>
   </header>
   <div class="layout">
-    <nav class="sidebar" id="sidebar">
-      <button class="nav-item" onclick="window.location.href='manager.php'"> <span class="bullet"></span>Manager Panel </button>
-      <button class="nav-item" onclick="window.location.href='order_history.php'"> <span class="bullet"></span>Orders </button>
-      <button class="nav-item" onclick="window.location.href='add-product.php'"> <span class="bullet"></span>Add product </button>
-      <button class="nav-item" onclick="window.location.href='display-product.php'"> <span class="bullet"></span>View Product</button>
-      <button class="nav-item" onclick="window.location.href='payment_history.php'"> <span class="bullet"></span>Payments</button>
-      <button class="nav-item" onclick="window.location.href='logout.php'"><span class="bullet"></span>Log out</button>
-    </nav>
+<nav class="sidebar" id="sidebar">
+    <button class="nav-item" onclick="window.location.href='../controller/manager_controller.php'"><span class="bullet"></span>Manager Panel</button>
+    <button class="nav-item" onclick="window.location.href='../controller/order_history_controller.php'"> <span class="bullet"></span>Orders</button>
+    <button class="nav-item" onclick="window.location.href='../controller/add_product_controller.php'"> <span class="bullet"></span>Add product</button>
+    <button class="nav-item" onclick="window.location.href='../controller/display_product_controller.php'"><span class="bullet"></span>View Product</button>
+    <button class="nav-item" onclick="window.location.href='../controller/payment_history_controller.php'"><span class="bullet"></span>Payments</button>
+    <button class="nav-item" onclick="window.location.href='../controller/manager_profile_controller.php'"><span class="bullet"></span>Profile</button>
+    <button class="nav-item" onclick="window.location.href='../controller/logout.php'"> <span class="bullet"></span>Log out</button>
+</nav>
     <main class="content">
       <div class="content-header">
         <div>

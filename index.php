@@ -1,12 +1,8 @@
 <?php
 session_start();
-include "controller/db.php";
-include __DIR__ . '/view/header.php';
-
-$sql = "SELECT * FROM products WHERE stock > 0";
-$result = mysqli_query($conn, $sql);
+require "controller/index_controller.php";
+include __DIR__ . '/view/header.php'; 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +26,11 @@ $result = mysqli_query($conn, $sql);
                 <br>
                 <button class="buy_btn" onclick="<?php
                 if (isset($_SESSION['user_id'])) {
-                    echo "window.location.href='single_order.php?id=" . $row['id'] . "'";
+                    echo "window.location.href='./controller/single_order_controller.php?id=" . $row['id'] . "'";
                 } else {
                     echo "window.location.href='./view/sign_in.php'";
                 }
-                ?>">
-                    Buy
-                </button>
+                ?>"> Buy </button>
             </div>
         <?php } ?>
     </div>
