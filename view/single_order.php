@@ -1,34 +1,22 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-if (!isset($_SESSION['user_id'])) {
-    header("Location: view/sign_in.php");
-    exit;
-}
-include "controller/db.php";
-$id = $_GET['id'];
-$sql = "SELECT * FROM products WHERE id = $id";
-$result = mysqli_query($conn, $sql);
-$product = mysqli_fetch_assoc($result);
+    // session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Buy Product</title>
-    <link rel="stylesheet" href="single_order_style.css">
+    <link rel="stylesheet" href="../view/single_order_style.css">
 </head>
 <body>
-    <button onclick="window.location.href='index.php'"> <span class="bullet"></span>Home</button>
+    <button onclick="window.location.href='../index.php'"> <span class="bullet"></span>Home</button>
     <h1>Buy Product</h1>
-    <img src="media/<?php echo $product['image']; ?>" width="200">
+    <img src="../media/<?php echo $product['image']; ?>" width="200">
     <h2><?php echo $product['name']; ?></h2>
     <p><?php echo $product['about']; ?></p>
     <h3>Price: <?php echo $product['price']; ?></h3>
     <p>Stock: <?php echo $product['stock']; ?></p>
-    <form action="payment.php" method="POST">
+    <form action="../controller/payment_controller.php" method="POST">
         <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
         <label>Quantity:</label>
         <input type="number" name="quantity" value="1" min="1">
