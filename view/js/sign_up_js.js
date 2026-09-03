@@ -1,4 +1,4 @@
-alert("JavaScript is working");
+// alert("JavaScript is working");
 
 document.getElementById("signupForm").addEventListener("submit", function(event) {
 

@@ -42,9 +42,18 @@
         </ul>
         <ul>
             <p>Let Us Help You</p>
-            <li>
-                <a href="#">Your Account</a>
-            </li>
+        <li>
+            <a href="<?php
+                if (isset($_SESSION['user_id'])) 
+                    {
+                    echo 'user_dashboard.php';
+                    } 
+                else 
+                    {
+                    echo './view/sign_in.php';
+                    }
+            ?>">Your Account</a>
+        </li>
             <li>
                 <a href="#">Your Orders</a>
             </li>
