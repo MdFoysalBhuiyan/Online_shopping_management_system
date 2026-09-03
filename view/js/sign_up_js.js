@@ -1,3 +1,5 @@
+alert("JavaScript is working");
+
 document.getElementById("signupForm").addEventListener("submit", function(event) {
 
     let name = document.getElementById("name").value;
@@ -43,3 +45,20 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     }
 
 });
+
+document.getElementById("email").addEventListener("keyup", function () {
+    let email = this.value;
+    if (email == "") {
+        document.getElementById("emailMessage").innerHTML = "";
+        return;
+    }
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "../controller/check_email.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onload = function () {
+        document.getElementById("emailMessage").innerHTML = xhr.responseText;
+    };
+    xhr.send("email=" + email);
+});
+
+
