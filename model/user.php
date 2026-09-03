@@ -36,5 +36,32 @@ function getAllUsers()
     $result = mysqli_query($conn, $sql);
     return $result;
 }
+function getCustomer($id)
+{
+    $conn = connect();
 
+    $sql = "SELECT id, name, email, phone, address, role
+            FROM users
+            WHERE id = '$id' AND role = 'customer'";
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        return mysqli_fetch_assoc($result);
+    }
+
+    return false;
+}
+function updateUser($id, $name, $email, $phone)
+{
+    $conn = connect();
+
+    $sql = "UPDATE users
+            SET name = '$name',
+                email = '$email',
+                phone = '$phone'
+            WHERE id = '$id'";
+
+    return mysqli_query($conn, $sql);
+}
 ?>

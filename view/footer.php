@@ -42,17 +42,16 @@
         </ul>
         <ul>
             <p>Let Us Help You</p>
-        <li>
+    <li>
             <a href="<?php
-                if (isset($_SESSION['user_id'])) 
-                    {
-                    echo 'user_dashboard.php';
-                    } 
-                else 
-                    {
+                if (isset($_SESSION['user_id'])) {
+                    echo './controller/user_controller.php';
+                } else {
                     echo './view/sign_in.php';
-                    }
-            ?>">Your Account</a>
+                }
+            ?>">
+                Your Account
+            </a>
         </li>
             <li>
                 <a href="#">Your Orders</a>
