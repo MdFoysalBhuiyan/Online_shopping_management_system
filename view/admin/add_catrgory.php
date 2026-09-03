@@ -36,27 +36,20 @@
       </div>
       <div class="stats">
       </div>
-            <table border="1">
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th>Role</th>
-            </tr>
-            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-            <tr>
-              <td><?php echo $row['id']; ?></td>
-              <td><?php echo $row['name']; ?></td>
-              <td><?php echo $row['email']; ?></td>
-              <td><?php echo $row['phone']; ?></td>
-              <td><?php echo $row['address']; ?></td>
-              <td><?php echo $row['role']; ?></td>
-            </tr>
-            <?php } ?>
-        </table>
-    </main>
+      <form action="" method="POST">
+
+    <input type="text" name="name" placeholder="Category Name" required>
+
+    <input type="submit" name="submit" value="ADD">
+
+</form>
+
+<?php
+if (!empty($message)) {
+    echo "<p>$message</p>";
+}
+?>
+
   </div>
 </div>
 </body>

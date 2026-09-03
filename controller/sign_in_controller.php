@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['user_name'] = $user['name'];
             $_SESSION['user_role'] = $user['role'];
             if ($user['role'] == "admin") {
-                header("Location: ../view/admin/admin_panel.php");
+               header("Location: admin_controller.php");
             }
             elseif ($user['role'] == "manager") {
                 header("Location: ../controller/manager_controller.php");

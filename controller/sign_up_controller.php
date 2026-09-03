@@ -64,9 +64,9 @@ if ($req === "POST") {
             $_SESSION['successMessage'] = "Error! Registration failed.";
         }
     }
-    header("Location: ../view/signup.php");
+    header("Location: ../view/sign_up.php");
 }
 else {
-    header("Location: ../view/signup.php");
+    header("Location: ../view/sign_up.php");
 }
 ?>
