@@ -10,7 +10,7 @@
 <div class="shell">
   <header class="topbar">
     <div class="brand">
-      <button class="brand-mark" id="brandMark" title="Shop menu" aria-label="Shop menu" onclick="window.location.href='index.php'">S</button>
+      <button class="brand-mark" id="brandMark" title="Shop menu" aria-label="Shop menu" onclick="window.location.href='../index.php'">S</button>
       <span class="brand-name">Online Shop BD</span>
     </div>
     <div class="manager-pill">
