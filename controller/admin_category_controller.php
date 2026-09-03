@@ -12,7 +12,7 @@ if ($_SESSION['user_role'] != "admin") {
     exit();
 }
 
-require __DIR__ . "/../model/category.php";
+require "../model/db.php";
 
 $message = "";
 
@@ -20,22 +20,19 @@ if (isset($_POST['submit'])) {
 
     $name = $_POST['name'];
 
-    if (empty($name)) {
+    $conn = connect();
 
-        $message = "Category name cannot be empty.";
+    $sql = "INSERT INTO categories (name) VALUES ('$name')";
 
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $message = "Category added successfully";
     } else {
-
-        $result = addCategory($name);
-
-        if ($result) {
-            $message = "Category Added Successfully";
-        } else {
-            $message = "Error! Category was not added.";
-        }
+        $message = "Error adding category";
     }
 }
 
-require __DIR__ . "/../view/admin/add_category.php";
+require "../view/admin/add_category.php";
 
 ?>
