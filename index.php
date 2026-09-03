@@ -2,6 +2,12 @@
 session_start();
 require "controller/index_controller.php";
 include __DIR__ . '/view/header.php'; 
+
+if (isset($_COOKIE['visited'])) 
+    {
+        echo "Welcome back!";
+    } 
+    setcookie("visited", "yes", time() + 86400);
 ?>
 <!DOCTYPE html>
 <html lang="en">

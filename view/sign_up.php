@@ -23,11 +23,12 @@ session_start();
                 }
             ?>
             <input type="email" name="email" id="email" placeholder="Email">
+            <p id="emailMessage"></p>
             <?php
-            if (!empty($_SESSION['emailError']))
-                {
-                    echo "<div class='error'>" . $_SESSION['emailError'] . "</div><br>";
-                }
+            if (!empty($_SESSION['emailError'])) 
+            {
+                echo "<div class='error'>" . $_SESSION['emailError'] . "</div><br>";
+            }
             ?>
             <input type="password" name="password" id="password" placeholder="Password">
             <?php
@@ -59,6 +60,6 @@ session_start();
             ?>
         </form>
     </div>
-    <script src="/js/sign_up_js.js"></script>
+    <script src="../view/js/sign_up_js.js"></script>
 </body>
 </html>
