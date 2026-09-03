@@ -19,9 +19,6 @@
         <ul>
             <p>Make Money with Us</p>
             <li>
-                <a href="#">Sell products on Amazon</a>
-            </li>
-            <li>
                 <a href="#">Become an Affiliate</a>
             </li>
             <li>

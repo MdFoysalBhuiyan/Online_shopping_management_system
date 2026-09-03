@@ -29,5 +29,12 @@ function getUser($id)
     $user = mysqli_fetch_assoc($result);
     return $user;
 }
+function getAllUsers()
+{
+    $conn = connect();
+    $sql = "SELECT id, name, email, phone, address, role FROM users";
+    $result = mysqli_query($conn, $sql);
+    return $result;
+}
 
 ?>

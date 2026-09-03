@@ -12,8 +12,7 @@ session_start();
 <body>
     <div class="form-container sign-up">
         <form action="../controller/sign_up_controller.php" method="post" id="signupForm">
-            <button type="button" id="back_button"
-                onclick="window.location.href='sign_in.php'">Back</button>
+            <button type="button" id="back_button" onclick="window.location.href='sign_in.php'">Back</button>
             <h1>Create Account</h1>
             <br>
             <input type="text" name="name" id="name" placeholder="Name">
@@ -51,9 +50,7 @@ session_start();
                     echo "<div class='error'>" . $_SESSION['addressError'] . "</div>";
                 }
             ?>
-            <button type="submit" name="submit" value="signup">
-                Sign Up
-            </button>
+            <button type="submit" name="submit" value="signup">Sign Up</button>
             <?php
             if (!empty($_SESSION['successMessage'])) 
                 {

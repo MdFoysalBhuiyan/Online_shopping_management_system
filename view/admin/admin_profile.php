@@ -1,22 +1,10 @@
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-include "controller/db.php";
-$id = $_SESSION['user_id'];
-$sql = "SELECT id, name, email, phone, address, role FROM users WHERE id = $id";
-$result = mysqli_query($conn, $sql);
-$user = mysqli_fetch_assoc($result);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Shop BD Inventory</title>
-
-<link rel="stylesheet" href="manager-style.css">
+<link rel="stylesheet" href="../view/admin/admin_style.css">
 </head>
 <body>
 <div class="shell">
@@ -30,15 +18,13 @@ $user = mysqli_fetch_assoc($result);
     </div>
   </header>
   <div class="layout">
-    <nav class="sidebar" id="sidebar">
-      <button class="nav-item" onclick="window.location.href='admin_panel.php'"> <span class="bullet"></span>Admin Dashbrod </button>
-      <!-- <button class="nav-item" onclick="window.location.href='order_history.php'"> <span class="bullet"></span>Orders </button>
-      <button class="nav-item" onclick="window.location.href='add-product.php'"> <span class="bullet"></span>Add product </button>
-      <button class="nav-item" onclick="window.location.href='display-product.php'"> <span class="bullet"></span>View Product</button>
-      <button class="nav-item" onclick="window.location.href='payment_history.php'"> <span class="bullet"></span>Payments</button> -->
-      <button class="nav-item" onclick="window.location.href='manager_profile.php'"><span class="bullet"></span>Profile</button>
-      <button class="nav-item" onclick="window.location.href='logout.php'"><span class="bullet"></span>Log out</button>
-    </nav>
+<nav class="sidebar" id="sidebar">
+    <button class="nav-item" onclick="window.location.href='/GitHub%20Clones/WebTech_Project/Online_shopping_management_system/controller/admin_controller.php'"><span class="bullet"></span>Dashborad</button>
+    <button class="nav-item" onclick="window.location.href='#'"><span class="bullet"></span>Create Manager</button>
+    <button class="nav-item" onclick="window.location.href='/GitHub%20Clones/WebTech_Project/Online_shopping_management_system/controller/admin_category_controller.php'"> <span class="bullet"></span>Add Category</button>
+    <button class="nav-item" onclick="window.location.href='/GitHub%20Clones/WebTech_Project/Online_shopping_management_system/controller/admin_profile_controller.php'"><span class="bullet"></span>Profile</button>
+    <button class="nav-item" onclick="window.location.href='../../controller/logout.php'"> <span class="bullet"></span>Log out </button>
+</nav>
     <main class="content">
       <div class="content-header">
         <div>
