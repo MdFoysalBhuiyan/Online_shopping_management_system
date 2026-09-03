@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +14,7 @@
       <span class="brand-name">Online Shop BD</span>
     </div>
     <div class="manager-pill">
-      <span class="dot"></span> ADMIN
+      <span class="dot"></span> MANAGER
     </div>
   </header>
   <div class="layout">
@@ -29,33 +28,24 @@
     <main class="content">
       <div class="content-header">
         <div>
-          <h1>Order Histroy</h1>
+          <h1>Add Manager</h1>
           <p class="sub" id="subLine">
           </p>
+            <form action="admin_manager_controller.php" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <br><br>
+                <input type="email"name="email"placeholder="Email"required >
+                <br><br>
+                <input type="password"name="password"placeholder="Password"required >
+                <br><br>
+                <input type="text"name="phone" placeholder="Phone Number"required>
+                <br><br>
+                <input type="text"name="address" placeholder="Address" required>
+                <br><br>
+                <input type="submit" name="submit" value="ADD MANAGER">
+            </form>
         </div>
       </div>
-      <div class="stats">
-      </div>
-            <table border="1">
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th>Role</th>
-            </tr>
-            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-            <tr>
-              <td><?php echo $row['id']; ?></td>
-              <td><?php echo $row['name']; ?></td>
-              <td><?php echo $row['email']; ?></td>
-              <td><?php echo $row['phone']; ?></td>
-              <td><?php echo $row['address']; ?></td>
-              <td><?php echo $row['role']; ?></td>
-            </tr>
-            <?php } ?>
-        </table>
     </main>
   </div>
 </div>

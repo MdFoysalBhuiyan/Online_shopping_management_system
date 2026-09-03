@@ -17,7 +17,7 @@ session_start();
             <br>
                <input type="email" name="email" placeholder="Email">
                 <input type="password" name="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
+                <a href="forgot_password.php">Forget Your Password?</a>
                 <button type="submit" name="submit" value="signin">Sign In</button>
                 <p> Don't Have Account?</p>
                 <button type="button" id="sign_up_button" onclick="window.location.href='sign_up.php'">Create Id</button>
